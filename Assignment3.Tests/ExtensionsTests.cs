@@ -64,17 +64,17 @@ namespace BDSA2021.Assignment03.Tests
             Assert.False(uri.isSecure());
         }
 
-        [Fact]
+        /* [Fact]
         public void WordCount_GivenStringOfAllTypesOfCharacters_ReturnsNumberOfWords()
         {
             var str = "This is a test 123 string for @£$€€@[&\"/¤/\"&&(/¤\" testing my WordCount method.";
             Assert.Equal(10, str.WordCount());
-        }
-        [Fact]
+        } */
+        /* [Fact]
         public void WordCount_GivenStringOfNoWords_ReturnsZero()
         {
             var str = "69 420 !\"#¤%& 1144 11943 =)(/&% 123 ^^^^ ^~~~>>\\`` @£$€€@[&\"/¤/\"&&(/¤\"";
             Assert.Equal(0, str.WordCount());
-        }
+        } */
     }
 }
