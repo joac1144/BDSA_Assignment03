@@ -9,7 +9,7 @@ namespace BDSA2021.Assignment03.Tests
         {
             var wizards = Wizard.Wizards.Value;
 
-            Assert.Equal(9, wizards.Count);
+            Assert.Equal(12, wizards.Count);
         }
 
         [Theory]
@@ -20,8 +20,11 @@ namespace BDSA2021.Assignment03.Tests
         [InlineData("Albus Dumbledore", "Harry Potter", 1997, "J. K. Rowling")]
         [InlineData("Warlic", "AdventureQuest", 2002, "Artix Entertainment")]
         [InlineData("Merlin", "Prophetiæ Merlini", 1135, "Geoffrey of Monmouth")]
-        [InlineData("Gandalf", "???", 1937, "J.R.R. Tolkien")]
+        [InlineData("Gandalf", "Lord of the Rings", 1937, "J.R.R. Tolkien")]
         [InlineData("Darth Test", "ITU Wars", 2021, "Joachim Kofoed")]
+        [InlineData("Ron Weasly","Harry Potter",1998,"J. K. Rowling")]
+        [InlineData("Veigar","League of Legends",2009,"Riot Games")]
+        [InlineData("Ryze","League of Legends",2008,"Riot Games")]
         public void Spot_check_wizards(string name, string medium, int year, string creator)
         {
             var wizards = Wizard.Wizards.Value;

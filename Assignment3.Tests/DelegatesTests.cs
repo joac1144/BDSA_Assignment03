@@ -9,7 +9,7 @@ namespace BDSA2021.Assignment03.Tests
         [Fact]
         public void ReverseString_GivenString_ReturnsReversedString()
         {
-            // Action<string> reverse = rs => Console.WriteLine(string.Join("", rs.Reverse()));
+            //Action<string> reverse = rs => Console.WriteLine(string.Join("", rs.Reverse()));
             // reverse("Reverse this string");
             Converter<string, string> reverse = rs => string.Join("", rs.Reverse());
             string reverseThis = "Reverse this string";
@@ -27,7 +27,7 @@ namespace BDSA2021.Assignment03.Tests
         public void NumericallyEqual_GivenNumericallyEqualIntegerAndString_ReturnsTrue()
         {
             Func<int, string, bool> numEqual = (int num, string str) => num == int.Parse(str);
-            Assert.True(numEqual(69, "0000069"));
+            Assert.True(numEqual(69, " 0000069"));
         }
         [Fact]
         public void NumericallyEqual_GivenNotNumericallyEqualIntegerAndString_ReturnsFalse()

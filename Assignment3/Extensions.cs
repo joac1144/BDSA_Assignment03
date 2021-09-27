@@ -13,8 +13,7 @@ namespace BDSA2021.Assignment03
 
         public static bool isSecure(this Uri uri) => uri.Scheme == Uri.UriSchemeHttps;
 
-        public static int WordCount(this string x) => Regex.Split(x, @"\P{L}+").Count();
-        //WordCount virker fint så længe den givne string ikke starter eller slutter med et tegn der fanges af regex'en
+        public static int WordCount(this string x) => Regex.Matches(x, @"[\p{L}]+").Count();
 
         // Predicates
         public static bool isLeapYear(int x) {

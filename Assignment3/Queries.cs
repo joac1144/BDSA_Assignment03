@@ -10,14 +10,14 @@ namespace BDSA2021.Assignment03
         {
             var wizards = Wizard.Wizards.Value;
             var result = from w in wizards
-                         where w.Creator.Contains(" Rowling")
+                         where w.Creator == "J. K. Rowling"
                          select w.Name;
             return result;
         }
         public static IEnumerable<string> WizardsInventedByRowlingExtensions()
         {
             var wizards = Wizard.Wizards.Value;
-            var result = wizards.Where(w => w.Creator.Contains(" Rowling"))
+            var result = wizards.Where(w => w.Creator == "J. K. Rowling")
                                 .Select(w => w.Name);
             return result;
         }
@@ -28,17 +28,15 @@ namespace BDSA2021.Assignment03
             var wizards = Wizard.Wizards.Value;
             var result = (from w in wizards
                          where w.Name.Contains("Darth ")
-                         orderby w.Year
-                         select w.Year).First();
+                         select w.Year).Min();
             return result;
         }
         public static int? YearOfTheFirstSithLordExtensions()
         {
             var wizards = Wizard.Wizards.Value;
             var result = wizards.Where(w => w.Name.Contains("Darth "))
-                                .OrderBy(w => w.Year)
                                 .Select(w => w.Year)
-                                .First();
+                                .Min();
             return result;
         }
 
@@ -54,8 +52,15 @@ namespace BDSA2021.Assignment03
                          );
             return result;
         }
-        // TODO: implement the Extension Methods version
 
+        public static IEnumerable<(string, int?)> ListOfWizardsFromHarryPotterExtensions()
+        {
+            var wizards = Wizard.Wizards.Value;
+            var result = wizards.Where(w => w.Medium.Equals("Harry Potter"))
+                                .Select(w => (w.Name, w.Year)).Distinct();
+            return result;
+        }
+        
         //List of wizard names grouped by creator in reverse order by creator name and then wizard name.
         public static IEnumerable<string> ListOfWizardsGroupedByCreatorLINQ()
         {
@@ -69,6 +74,7 @@ namespace BDSA2021.Assignment03
         {
             var wizards = Wizard.Wizards.Value;
             var result = wizards.OrderByDescending(w => w.Creator)
+                                .ThenByDescending(w => w.Name)
                                 .Select(w => w.Name);
             return result;
         }

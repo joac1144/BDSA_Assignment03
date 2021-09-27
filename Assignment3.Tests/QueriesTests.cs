@@ -9,14 +9,14 @@ namespace BDSA2021.Assignment03.Tests
         [Fact]
         public void WizardsInventedByRowlingLINQ_ReturnsNameOfAllWizardsInventedByRowling()
         {
-            IEnumerable<string> expected = new List<string>() {"Harry Potter", "Albus Dumbledore"};
+            IEnumerable<string> expected = new List<string>() {"Harry Potter", "Albus Dumbledore", "Ron Weasly"};
             var actual = Queries.WizardsInventedByRowlingLINQ();
             Assert.Equal(expected, actual);
         }
         [Fact]
         public void WizardsInventedByRowlingExtensions_ReturnsNameOfAllWizardsInventedByRowling()
         {
-            IEnumerable<string> expected = new List<string>() {"Harry Potter", "Albus Dumbledore"};
+            IEnumerable<string> expected = new List<string>() {"Harry Potter", "Albus Dumbledore", "Ron Weasly"};
             var actual = Queries.WizardsInventedByRowlingExtensions();
             Assert.Equal(expected, actual);
         }
@@ -36,35 +36,40 @@ namespace BDSA2021.Assignment03.Tests
             Assert.Equal(expected, actual);
         }
 
-        /* [Fact]
+        [Fact]
         public void ListOfWizardsFromHarryPotterLINQ_ReturnsListOfTuplesWithNameAndYear()
         {
             IEnumerable<(string, int?)> expected = new List<(string, int?)>() {
-                ("Harry Potter", 1977), 
-                ("Albus Dumbledore", 1977)
+                ("Harry Potter", 1997), 
+                ("Albus Dumbledore", 1997),
+                ("Ron Weasly", 1998)
             };
             var actual = Queries.ListOfWizardsFromHarryPotterLINQ();
             Assert.Equal(expected, actual);
-        } */
-        /* [Fact]
+        }
+        [Fact]
         public void ListOfWizardsFromHarryPotterExtensions_ReturnsListOfTuplesWithNameAndYear()
         {
             IEnumerable<(string, int?)> expected = new List<(string, int?)>() {
-                ("Harry Potter", 1977), 
-                ("Albus Dumbledore", 1977)
+                ("Harry Potter", 1997), 
+                ("Albus Dumbledore", 1997),
+                ("Ron Weasly" , 1998)
             };
             var actual = Queries.ListOfWizardsFromHarryPotterExtensions();
             Assert.Equal(expected, actual);
-        } */
+        } 
 
         [Fact]
         public void ListOfWizardsGroupedByCreatorLINQ_ReturnsListInCorrectOrder()
         {
             IEnumerable<string> expected = new List<string>() {
+                "Veigar",
+                "Ryze",
                 "Joachim",
                 "Darth Test",
                 "Sauron",
                 "Gandalf",
+                "Ron Weasly",
                 "Harry Potter",
                 "Albus Dumbledore",
                 "Darth Vader",
@@ -78,10 +83,13 @@ namespace BDSA2021.Assignment03.Tests
         public void ListOfWizardsGroupedByCreatorExtensions_ReturnsListInCorrectOrder()
         {
             IEnumerable<string> expected = new List<string>() {
+                "Veigar",
+                "Ryze",
                 "Joachim",
                 "Darth Test",
                 "Sauron",
                 "Gandalf",
+                "Ron Weasly",
                 "Harry Potter",
                 "Albus Dumbledore",
                 "Darth Vader",
